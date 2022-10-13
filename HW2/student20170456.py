@@ -23,7 +23,7 @@ for row in ws:
     if row_id != 1:       
         sum_v += ws.cell(row = row_id, column = 7).value        
     row_id += 1   
- 
+
 middle = round(sum_v/(row_id-2), 2) 
 t = row_id-2
 a = m.ceil(t*0.3) 
@@ -59,4 +59,3 @@ for row in ws:
     row_id1 += 1
 
 wb.save("student.xlsx")
-
