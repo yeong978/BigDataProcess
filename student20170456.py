@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-
+print("확인중입니다.")
+'''
 import openpyxl
 import math as m
 
@@ -59,4 +60,4 @@ for row in ws:
     row_id1 += 1
 
 wb.save("student.xlsx")
-
+'''
