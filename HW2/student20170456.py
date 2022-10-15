@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 
 import openpyxl
-import math as m
 
 wb = openpyxl.load_workbook("student.xlsx")
 ws = wb["Sheet1"]
+
 
 row_id = 1;
 for row in ws:
@@ -25,17 +25,13 @@ for row in ws:
     row_id += 1   
 
 middle = round(sum_v/(row_id-2), 2) 
-t = row_id-2
-a = m.ceil(t*0.3) 
-b = m.floor(t*0.7)-a 
-c = m.ceil(t*0.3) 
 
-a_m = middle + round(middle*0.3*0.5,2) 
-c_m = middle - round(middle*0.3*0.5,2) 
-b_m = middle - round(middle*0.3*0.5*0.5*0.5,2) 
-a_p = a_m + round(a_m*0.3*0.5,2) 
-c_p = c_m - round(a_m*0.3*0.5,2) 
-
+a_m = middle + round(middle*0.4*0.5,2) 
+a_p = a_m + round(a_m*0.28*0.5,2) 
+b_m = middle
+c_m = middle - round(middle*0.26*0.5,2) 
+c_p = c_m - round(middle*0.58*0.5,2) 
+print(middle,a_m,a_p,b_m,c_m,c_p)
 
 row_id1 = 1
 
@@ -47,15 +43,16 @@ for row in ws:
             else:
                 ws.cell(row = row_id1, column = 8).value = 'A0'            
         elif ws.cell(row = row_id1, column = 7).value < c_m:
-            if ws.cell(row = row_id1, column = 7).value < c_p:
-                ws.cell(row = row_id1, column = 8).value = 'C0'
+            if ws.cell(row = row_id1, column = 7).value > c_p:
+                ws.cell(row = row_id1, column = 8).value = 'C+'
             else:
-                ws.cell(row = row_id1, column = 8).value = 'C+'            
+                ws.cell(row = row_id1, column = 8).value = 'C0'            
         else:
             if ws.cell(row = row_id1, column = 7).value > b_m:
                 ws.cell(row = row_id1, column = 8).value = 'B+'
             else:
                 ws.cell(row = row_id1, column = 8).value = 'B0'
     row_id1 += 1
-
+    
 wb.save("student.xlsx")
+
