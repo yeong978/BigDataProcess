@@ -27,11 +27,10 @@ for row in ws:
 middle = round(sum_v/(row_id-2), 2) 
 
 a_m = middle + round(middle*0.4*0.5,2) 
-a_p = a_m + round(a_m*0.28*0.5,2) 
+a_p = a_m + round(a_m*0.3*0.5,2) 
 b_m = middle
-c_m = middle - round(middle*0.26*0.5,2) 
-c_p = c_m - round(middle*0.58*0.5,2) 
-print(middle,a_m,a_p,b_m,c_m,c_p)
+c_m = middle - round(middle*0.4*0.5,2) 
+c_p = c_m - round(middle*0.3*0.5,2) 
 
 row_id1 = 1
 
