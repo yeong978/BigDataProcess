@@ -29,11 +29,17 @@ with open(in_fp, "rt") as fp:
                 sum_gen[i] = 1
             else:
                 sum_gen[i] += 1
-             
+                
 with open(out_fp, "wt") as fp:
-    gen_list = list(sum_gen.items())
-    for i in gen_list:
-        fp.writelines(str(i))
+    a = list(sum_gen.keys())
+    b = list(sum_gen.values())
+    re = zip(a,b)
+    result = list(re)
+        
+    for items in result:
+        r = str(items)
+        fp.write(r + "\n")
+    
                 
 
 

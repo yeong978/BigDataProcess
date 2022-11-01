@@ -7,6 +7,8 @@ file = input("File : ")
 f = file.split(" ")
 inp = f[0]
 outp = f[1]
+result = []
+
 with open(inp, "rt") as f:
     for line in f:
         uber_arr = line.split(",")
@@ -29,13 +31,17 @@ with open(inp, "rt") as f:
         month = int(d[0])
         day = int(d[1])
         year = int(d[2])
+ 
         wd = datetime.date(year,month,day).weekday()
         weekday = ["MON","TUE","WED","THU","FRI","SAT","SUN"]
         uber_arr.insert(1,weekday[wd])
         
-        with open(outp, "wt") as fp:
-            for i in uber_arr:
-                fp.writelines(i)
+        for i in uber_arr:
+            result.append(i)
+
+with open(outp, "wt") as fp:
+    for i in result:
+        fp.write(i + "\n")
 
 
 
