@@ -2,11 +2,10 @@
 
 
 import datetime
+import sys
 
-file = input("File : ")
-f = file.split(" ")
-inp = f[0]
-outp = f[1]
+inp = sys.argv[1]
+outp = sys.argv[2]
 result = []
 
 with open(inp, "rt") as f:

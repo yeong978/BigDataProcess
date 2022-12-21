@@ -1,11 +1,10 @@
 #!/usr/bin/python3
+import sys
 
 sum_gen = dict()
 
-m = input("File : ")
-movie = m.split(" ")
-in_fp = movie[0]
-out_fp = movie[1]
+in_fp = sys.argv[1]
+out_fp = sys.argv[2]
 
 with open(in_fp, "rt") as fp:
     for line in fp:
@@ -29,7 +28,8 @@ with open(in_fp, "rt") as fp:
                 sum_gen[i] = 1
             else:
                 sum_gen[i] += 1
-                
+print(sum_gen)
+                 
 with open(out_fp, "wt") as fp:
     a = list(sum_gen.keys())
     b = list(sum_gen.values())
