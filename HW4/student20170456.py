@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import numpy as np
 import operator
 import os
@@ -64,4 +66,4 @@ if __name__ == '__main__':
     trainingDataPath = sys.argv[1]
     testDataPath = sys.argv[2]
 
-    classifier(trainingDataPath, testDataPat
+    classifier(trainingDataPath, testDataPath)
