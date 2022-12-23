@@ -37,6 +37,7 @@ with open(inp, "rt") as f:
         
         for i in uber_arr:
             result.append(i)
+print(result)
 
 with open(outp, "wt") as fp:
     for i in result:
