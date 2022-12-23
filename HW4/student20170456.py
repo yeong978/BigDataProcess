@@ -5,7 +5,7 @@ import operator
 import os
 import sys
 
-def classify(inX, dataSet, labels, k):
+def classify0(inX, dataSet, labels, k):
     dataSetSize = dataSet.shape[0]
     diffMat = np.tile(inX, (dataSetSize, 1)) - dataSet
     sqDiffMat = diffMat ** 2
@@ -55,7 +55,7 @@ def classifier(trainingDataPath, testDataPath):
         error = 0
         resLabels = []
         for testLabel, testMat in zip(testLabels, testMats):
-            res = classify(testMat, trainingMats, trainingLabels, k)
+            res = classify0(testMat, trainingMats, trainingLabels, k)
             resLabels.append(res)
             if res != testLabel:
                 error += 1
